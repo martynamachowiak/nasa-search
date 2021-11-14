@@ -8,7 +8,7 @@ function App() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    getImages("sun", setImages);
+    getImages("", setImages);
   }, []);
 
   const handleSubmit = (query) => {
