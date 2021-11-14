@@ -4,7 +4,11 @@ import axios from "axios";
 
 export const getImages = (query, setImages) => {
   axios
-    .get(`https://images-api.nasa.gov/search?&media_type=image&q=${query}`)
+    .get(`https://images-api.nasa.gov/search?&media_type=image&q=${query}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
     .then((response) => {
       const images = response.data.collection.items.map((imageSource) => {
         return {
