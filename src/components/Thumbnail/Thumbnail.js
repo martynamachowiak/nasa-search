@@ -1,10 +1,10 @@
 import React from "react";
 
 const Thumbnail = ({ image }) => {
-  const { url, alt } = image;
+  const { url, title } = image;
   return (
     <div>
-      <img src={url} alt={alt} />
+      <img src={url} alt={title} />
     </div>
   );
 };
