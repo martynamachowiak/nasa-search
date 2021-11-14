@@ -2,6 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import Thumbnail from "./components/Thumbnail/Thumbnail";
 import { getImages } from "./request/getImages";
+import SearchTool from "./components/SearchTool/SearchTool";
 
 function App() {
   const [images, setImages] = useState([]);
@@ -10,8 +11,13 @@ function App() {
     getImages("sun", setImages);
   }, []);
 
+  const handleSubmit = (query) => {
+    getImages(query, setImages);
+  };
+
   return (
     <div className="App">
+      <SearchTool onSubmit={handleSubmit} />
       <ul>
         {images.map((image) => (
           <li key={image.id}>
