@@ -1,8 +1,8 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import Thumbnail from "./components/Thumbnail/Thumbnail";
 import { getImages } from "./request/getImages";
 import SearchTool from "./components/SearchTool/SearchTool";
+import SearchResults from "./components/SearchResults/SearchResults";
 
 function App() {
   const [images, setImages] = useState([]);
@@ -19,13 +19,7 @@ function App() {
     <div className="App">
       <h1>Nasa Search</h1>
       <SearchTool onSubmit={handleSubmit} />
-      <ul>
-        {images.map((image) => (
-          <li key={image.id}>
-            <Thumbnail image={image} />
-          </li>
-        ))}
-      </ul>
+      <SearchResults images={images} />
     </div>
   );
 }
