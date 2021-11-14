@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import ImagesContext from "../../services/images-context";
 
 const Thumbnail = ({ image }) => {
-  const { url, title } = image;
+  const navigate = useNavigate();
+  const { id, url, title } = image;
+  const { setInView } = useContext(ImagesContext);
+
+  const handleClick = () => {
+    navigate(`/asset/${id}`);
+    setInView(image);
+  };
+
   return (
-    <a>
+    <button type="button" onClick={handleClick}>
       <img src={url} alt={title} />
-    </a>
+    </button>
   );
 };
 
