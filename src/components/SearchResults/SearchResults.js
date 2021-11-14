@@ -1,5 +1,5 @@
 import React from "react";
-import Thumbnail from "../Thumbnail/Thumbnail";
+import { Thumbnail } from "../";
 import "./SearchResults.css";
 
 const SearchResults = ({ images }) => {

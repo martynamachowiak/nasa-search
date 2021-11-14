@@ -1,25 +1,14 @@
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import { useState, useEffect } from "react";
-import { getImages } from "./request/getImages";
-import SearchTool from "./components/SearchTool/SearchTool";
-import SearchResults from "./components/SearchResults/SearchResults";
+import { Asset, Search } from "./views";
 
 function App() {
-  const [images, setImages] = useState([]);
-
-  useEffect(() => {
-    getImages(setImages);
-  }, []);
-
-  const handleSubmit = (query) => {
-    getImages(setImages, query);
-  };
-
   return (
     <div className="App">
-      <h1>Nasa Search</h1>
-      <SearchTool onSubmit={handleSubmit} />
-      <SearchResults images={images} />
+      <Routes>
+        <Route exact path="/search" element={<Search />} />
+        <Route path="/asset/:id" element={<Asset />} />
+      </Routes>
     </div>
   );
 }
