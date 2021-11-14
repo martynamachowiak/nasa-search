@@ -2,9 +2,14 @@
 
 import axios from "axios";
 
-export const getImages = (query, setImages) => {
+export const getImages = (setImages, query = null) => {
+  const endpoint =
+    query === null
+      ? "https://images-api.nasa.gov/search?&media_type=image"
+      : `https://images-api.nasa.gov/search?&media_type=image&q=${query}`;
+
   axios
-    .get(`https://images-api.nasa.gov/search?&media_type=image&q=${query}`, {
+    .get(endpoint, {
       headers: {
         "Content-Type": "application/json",
       },

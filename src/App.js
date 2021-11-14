@@ -8,11 +8,11 @@ function App() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    getImages("", setImages);
+    getImages(setImages);
   }, []);
 
   const handleSubmit = (query) => {
-    getImages(query, setImages);
+    getImages(setImages, query);
   };
 
   return (
