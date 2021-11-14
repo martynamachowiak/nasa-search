@@ -1,11 +1,19 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import ImagesContext from "../../services/images-context";
 
 const Asset = () => {
-  // const images = useContext(MyContext);
+  const { inView } = useContext(ImagesContext);
+  const { url, description, title } = inView;
 
-  const { id } = useParams();
-  return <div>Asset: {id}</div>;
+  return (
+    <div>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <img src={url} alt={title} />
+      <Link to="/search">Back to search results</Link>
+    </div>
+  );
 };
 
 export default Asset;
