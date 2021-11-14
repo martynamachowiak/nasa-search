@@ -17,6 +17,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Nasa Search</h1>
       <SearchTool onSubmit={handleSubmit} />
       <ul>
         {images.map((image) => (
