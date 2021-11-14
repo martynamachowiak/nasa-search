@@ -1,11 +1,12 @@
 import React from "react";
 import Thumbnail from "../Thumbnail/Thumbnail";
+import "./SearchResults.css";
 
 const SearchResults = ({ images }) => {
   return (
-    <ul>
+    <ul className="grid--search-results">
       {images.map((image) => (
-        <li key={image.id}>
+        <li key={image.id} className="grid__item">
           <Thumbnail image={image} />
         </li>
       ))}

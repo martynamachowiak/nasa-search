@@ -1,0 +1,22 @@
+.grid--search-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: auto;
+  gap: 20px;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grid__item {
+  max-height: 200px;
+}
+
+img {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
