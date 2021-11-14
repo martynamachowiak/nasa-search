@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { getImages } from "../../request/getImages";
 import { SearchTool, SearchResults } from "../../components";
+import ImagesContext from "../../services/images-context";
 
 const Search = () => {
-  const [images, setImages] = useState([]);
-
-  useEffect(() => {
-    getImages(setImages);
-  }, []);
+  const { images, setImages } = useContext(ImagesContext);
 
   const handleSubmit = (query) => {
     getImages(setImages, query);
