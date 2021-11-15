@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import ImagesContext from "../../services/images-context";
+import "./Asset.css";
 
 const Asset = () => {
   const { inView } = useContext(ImagesContext);
