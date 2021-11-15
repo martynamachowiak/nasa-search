@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchTool renders expected tree 1`] = `
+<div
+  className="search-tool"
+>
+  <div
+    className="search-tool__query"
+  >
+    <input
+      onChange={[Function]}
+      placeholder="e.g. space cat"
+      type="text"
+      value=""
+    />
+    <button
+      onClick={[Function]}
+    >
+      Search
+    </button>
+  </div>
+  <div
+    className="search-tool__criteria"
+  >
+    <label>
+      <input
+        name="image"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      Images
+    </label>
+    <label>
+      <input
+        name="video"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      Videos
+    </label>
+  </div>
+</div>
+`;
