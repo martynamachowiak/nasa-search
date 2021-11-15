@@ -1,0 +1,8 @@
+[class^="view"] {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+[class^="view"] h1 {
+  text-align: center;
+}
