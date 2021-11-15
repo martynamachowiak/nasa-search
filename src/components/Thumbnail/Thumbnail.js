@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import ImagesContext from "../../services/images-context";
+import "./Thumbnail.css";
 
 const Thumbnail = ({ image }) => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const Thumbnail = ({ image }) => {
   };
 
   return (
-    <button type="button" onClick={handleClick}>
+    <button className="thumbnail" type="button" onClick={handleClick}>
       <img src={url} alt={title} />
     </button>
   );
