@@ -10,11 +10,11 @@ const Search = () => {
     getImages(setImages, fields);
   };
   return (
-    <>
+    <div className="view--search">
       <h1>Nasa Search</h1>
       <SearchTool onSubmit={handleSubmit} />
       <SearchResults images={images} />
-    </>
+    </div>
   );
 };
 

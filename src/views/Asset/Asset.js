@@ -7,7 +7,7 @@ const Asset = () => {
   const { url, description, title } = inView;
 
   return (
-    <div>
+    <div className="view--asset">
       <h1>{title}</h1>
       <p>{description}</p>
       <img src={url} alt={title} />

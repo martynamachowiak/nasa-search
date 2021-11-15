@@ -4,6 +4,7 @@ import ImagesContext from "./services/images-context";
 import { getImages } from "./request/getImages";
 import { Asset, Search } from "./views";
 import "./App.css";
+import "./views/view.css";
 
 function App() {
   const [images, setImages] = useState([]);
