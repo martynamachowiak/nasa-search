@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 import ImagesContext from "../../services/images-context";
 import "./Thumbnail.css";
 
@@ -21,3 +22,11 @@ const Thumbnail = ({ image }) => {
 };
 
 export default Thumbnail;
+
+Thumbnail.propTypes = {
+  image: PropTypes.shape({
+    id: PropTypes.string,
+    url: PropTypes.string,
+    title: PropTypes.string,
+  }).isRequired,
+};

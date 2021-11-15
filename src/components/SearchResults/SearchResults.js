@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Thumbnail } from "../";
 import "./SearchResults.css";
 
@@ -15,3 +16,13 @@ const SearchResults = ({ images }) => {
 };
 
 export default SearchResults;
+
+SearchResults.propTypes = {
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      url: PropTypes.string,
+      title: PropTypes.string,
+    })
+  ).isRequired,
+};

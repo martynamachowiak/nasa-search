@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import "./SearchTool.css";
 
 const SearchTool = ({ onSubmit }) => {
@@ -62,3 +63,7 @@ const SearchTool = ({ onSubmit }) => {
 };
 
 export default SearchTool;
+
+SearchTool.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
