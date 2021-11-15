@@ -1,12 +1,20 @@
-// import axios from "axios";
-
 import axios from "axios";
 
-export const getImages = (setImages, query = null) => {
-  const endpoint =
-    query === null
-      ? "https://images-api.nasa.gov/search?&media_type=image"
-      : `https://images-api.nasa.gov/search?&media_type=image&q=${query}`;
+const buildEndpoint = ({ query, searchCriteria }) => {
+  let endpointBase = "https://images-api.nasa.gov/search?";
+  if (query.length === 0) {
+    return `${endpointBase}&media_type=image`;
+  }
+
+  const media =
+    searchCriteria.length === 0
+      ? "&media_type=image,video"
+      : `&media_type=${searchCriteria.join()}`;
+  return `${endpointBase}${media}&q=${query}`;
+};
+
+export const getImages = (setImages, fields) => {
+  const endpoint = buildEndpoint(fields);
 
   axios
     .get(endpoint, {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const SearchTool = ({ onSubmit }) => {
   const [fields, setFields] = useState({
-    query: null,
+    query: "",
     searchCriteria: [],
   });
 
@@ -34,10 +34,10 @@ const SearchTool = ({ onSubmit }) => {
         onChange={(e) => updateQuery(e)}
         placeholder="e.g. space cat"
       />
-      <button onClick={() => onSubmit(fields.query)}>Search</button>
+      <button onClick={() => onSubmit(fields)}>Search</button>
       <label>
         <input
-          name="images"
+          name="image"
           type="checkbox"
           onChange={(e) => updateSearchCriteria(e)}
         />

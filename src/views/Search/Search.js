@@ -6,8 +6,8 @@ import ImagesContext from "../../services/images-context";
 const Search = () => {
   const { images, setImages } = useContext(ImagesContext);
 
-  const handleSubmit = (query) => {
-    getImages(setImages, query);
+  const handleSubmit = (fields) => {
+    getImages(setImages, fields);
   };
   return (
     <>

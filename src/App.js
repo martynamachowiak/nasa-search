@@ -17,7 +17,7 @@ function App() {
   };
 
   useEffect(() => {
-    getImages(setImages);
+    getImages(setImages, { query: "", searchCriteria: [] });
   }, []);
 
   return (
