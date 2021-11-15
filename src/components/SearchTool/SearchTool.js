@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./SearchTool.css";
 
 const SearchTool = ({ onSubmit }) => {
   const [fields, setFields] = useState({
@@ -27,30 +28,35 @@ const SearchTool = ({ onSubmit }) => {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        value={fields.query}
-        onChange={(e) => updateQuery(e)}
-        placeholder="e.g. space cat"
-      />
-      <button onClick={() => onSubmit(fields)}>Search</button>
-      <label>
+    <div className="search-tool">
+      <div className="search-tool__query">
         <input
-          name="image"
-          type="checkbox"
-          onChange={(e) => updateSearchCriteria(e)}
+          type="text"
+          value={fields.query}
+          onChange={(e) => updateQuery(e)}
+          placeholder="e.g. space cat"
         />
-        Images
-      </label>
-      <label>
-        <input
-          name="video"
-          type="checkbox"
-          onChange={(e) => updateSearchCriteria(e)}
-        />
-        Videos
-      </label>
+        <button onClick={() => onSubmit(fields)}>Search</button>
+      </div>
+
+      <div className="search-tool__criteria">
+        <label>
+          <input
+            name="image"
+            type="checkbox"
+            onChange={(e) => updateSearchCriteria(e)}
+          />
+          Images
+        </label>
+        <label>
+          <input
+            name="video"
+            type="checkbox"
+            onChange={(e) => updateSearchCriteria(e)}
+          />
+          Videos
+        </label>
+      </div>
     </div>
   );
 };
