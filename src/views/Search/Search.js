@@ -4,15 +4,16 @@ import { SearchTool, SearchResults } from "../../components";
 import ImagesContext from "../../services/images-context";
 
 const Search = () => {
-  const { images, setImages } = useContext(ImagesContext);
+  const { images, setImages, message, setMessage } = useContext(ImagesContext);
 
   const handleSubmit = (fields) => {
-    getImages(setImages, fields);
+    getImages(setImages, fields, setMessage);
   };
   return (
     <div className="view--search">
       <h1>Nasa Search</h1>
       <SearchTool onSubmit={handleSubmit} />
+      {message !== "" && <p>{message}</p>}
       <SearchResults images={images} />
     </div>
   );

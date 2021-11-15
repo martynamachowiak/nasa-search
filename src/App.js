@@ -9,16 +9,19 @@ import "./views/view.css";
 function App() {
   const [images, setImages] = useState([]);
   const [inView, setInView] = useState({});
+  const [message, setMessage] = useState("");
 
   const value = {
     images,
     setImages,
     inView,
     setInView,
+    message,
+    setMessage,
   };
 
   useEffect(() => {
-    getImages(setImages, { query: "", searchCriteria: [] });
+    getImages(setImages, { query: "", searchCriteria: [] }, setMessage);
   }, []);
 
   return (
