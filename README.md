@@ -1,5 +1,7 @@
 # Nasa search
 
+[Preview](https://nasa-search-d5af6v103-martynamachowiak.vercel.app/search)
+
 ## Available Scripts
 
 In the project directory, you can run:
